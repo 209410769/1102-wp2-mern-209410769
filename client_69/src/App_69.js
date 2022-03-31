@@ -1,4 +1,7 @@
-import Landing_69 from "./pages/Landing_69";
+//import Landing_69 from "./pages/Landing_69";
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { Landing_69, Dashboard_69, Register_69 } from './pages';
+
 import styled from 'styled-components'
 
 // const Button = styled.button`
@@ -13,11 +16,14 @@ import styled from 'styled-components'
 
 function App_69() {
   return (
-    <div>
-      {/* <Button>Click me</Button>
-      <ButtonSecond>Click me</ButtonSecond> */}
-      <Landing_69 />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Dashboard_69 />} />
+        <Route path='/landing_69' element={<Landing_69 />} />
+        <Route path='/register_69' element={<Register_69 />} />
+      </Routes>
+      {/*<Landing_69/>*/}
+    </BrowserRouter>
   );
 }
 
