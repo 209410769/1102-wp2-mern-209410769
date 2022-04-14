@@ -1,0 +1,28 @@
+{
+  "name": "mern_demo_69",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server_69.js",
+  "type":"module",
+  "scripts": {
+    "start": "node server_69.js",
+    "dev": "nodemon server_69.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/209410769/1102-wp2-mern-209410769.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/209410769/1102-wp2-mern-209410769/issues"
+  },
+  "homepage": "https://github.com/209410769/1102-wp2-mern-209410769#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
