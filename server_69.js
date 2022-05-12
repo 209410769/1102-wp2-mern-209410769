@@ -9,11 +9,20 @@ const app = express();
 import dotenv from 'dotenv';
 dotenv.config();
 
+// DB and AuthenticateUser
 import connectDB_69 from './db/connect_69.js';
 
+//Midleware
+import notFoundMiddleware_69 from './middleware/not-fount_69.js';
+import errorHandlerMiddleware_69 from './middleware/error-handler_69.js';
+
 app.get('/', (req, res) => {
+    throw new Error('testing for error')
     res.send('Welcome YanboLin 209410769')
 });
+
+app.use(notFoundMiddleware_69);
+app.use(errorHandlerMiddleware_69);
 
 const port = process.env.PORT || 5001;
 
