@@ -12,14 +12,27 @@ dotenv.config();
 // DB and AuthenticateUser
 import connectDB_69 from './db/connect_69.js';
 
-//Midleware
+// Routes
+import authRoutes_69 from './routes/authRoutes_69.js'
+import loginRoutes_69 from './routes/authRoutes_69.js'
+import updateRoutes_69 from './routes/authRoutes_69.js'
+// Midleware
 import notFoundMiddleware_69 from './middleware/not-fount_69.js';
 import errorHandlerMiddleware_69 from './middleware/error-handler_69.js';
 
+app.use(express.json());
+
 app.get('/', (req, res) => {
-    throw new Error('testing for error')
+    // throw new Error('testing for error')
     res.send('Welcome YanboLin 209410769')
 });
+
+// auth
+app.use('/api/v1/auth_69', authRoutes_69);
+// login
+app.use('/api/v1/auth_69', loginRoutes_69);
+//update
+app.use('/api/v1/auth_69', updateRoutes_69);
 
 app.use(notFoundMiddleware_69);
 app.use(errorHandlerMiddleware_69);
