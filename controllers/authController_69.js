@@ -1,10 +1,15 @@
 import User_69 from "../models/User_69.js";
 
 // register
-const register_69 = async (req, res) => {
-    console.log('body', req.body);
-    const user = await User_69.create(req.body);
-    res.status(201).json({ user });
+const register_69 = async (req, res, next) => {
+    try {
+        console.log('body', req.body);
+        const user = await User_69.create(req.body);
+        res.status(201).json({ user });
+    } catch (err) {
+        //res.status(500).json({ msg: "Error on registering user" });
+        next(err);
+    }
     //    res.send('register user -- YanBoLin 209410769');
 }
 // login
