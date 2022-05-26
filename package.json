@@ -22,8 +22,11 @@
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "express-async-errors": "^3.1.1",
+    "http-status-codes": "^2.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.0",
+    "morgan": "^1.10.0",
     "validator": "^13.7.0"
   },
   "homepage": "https://github.com/209410769/1102-wp2-mern-209410769#readme",
