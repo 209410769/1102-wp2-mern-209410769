@@ -5,7 +5,9 @@
   "main": "server_69.js",
   "type": "module",
   "scripts": {
-    "start": "node server_69.js",
+    "server": "nodemon server_69.js -- ignore client_69",
+    "client": "npm start --prefix client_69",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\" ",
     "dev": "nodemon server_69.js"
   },
   "repository": {
@@ -27,10 +29,12 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.0",
     "morgan": "^1.10.0",
-    "validator": "^13.7.0"
+    "validator": "^13.7.0",
+    "webpack": "^4.44.2"
   },
   "homepage": "https://github.com/209410769/1102-wp2-mern-209410769#readme",
   "devDependencies": {
+    "concurrently": "^7.2.1",
     "nodemon": "^2.0.15"
   }
 }

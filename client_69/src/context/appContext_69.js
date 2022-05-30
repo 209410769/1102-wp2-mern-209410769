@@ -1,13 +1,16 @@
 import React, { useReducer, useContext } from 'react';
 import reducer_69 from './reducer_69';
 import { CLEAR_ALERT, DISPLAY_ALERT } from './action_69';
+import axios from 'axios';
 import { useInRouterContext } from 'react-router-dom';
 
 const initialState = {
     isLoading: false,
     showAlert: false,
     alertText: '',
-    alertType: ''
+    alertType: '',
+    user: '',
+    token: ''
 }
 
 const appContext_69 = React.createContext();
@@ -28,8 +31,13 @@ const AppProvider_69 = ({ children }) => {
         }, 3000);
     }
 
+    const registerUser = async ({ currentUser, endPoint, alertText }) => {
+        const { data } = await axios.post(`/api/v1/auth_69/${endPoint}`);
+        console.log('registerUser data', data);
+    }
+
     return (
-        <appContext_69.Provider value={{ ...state, displayAlert, clearAlert }}>
+        <appContext_69.Provider value={{ ...state, displayAlert, clearAlert, registerUser }}>
             {children}
         </appContext_69.Provider>
     )
