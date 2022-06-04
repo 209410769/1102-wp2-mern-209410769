@@ -14,7 +14,7 @@ import 'express-async-errors';
 import morgan from 'morgan';
 
 // cors
-// import cors from 'cors';
+import cors from 'cors';
 
 // DB and AuthenticateUser
 import connectDB_69 from './db/connect_69.js';
@@ -31,7 +31,7 @@ if (process.env.NODE_ENV !== 'production') {
     app.use(morgan('dev'));
 }
 
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
