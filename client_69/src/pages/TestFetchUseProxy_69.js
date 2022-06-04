@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect } from "react";
+
 const TestFetchUseProxy_69 = () => {
 
     const fetchDataLocal = async () => {
