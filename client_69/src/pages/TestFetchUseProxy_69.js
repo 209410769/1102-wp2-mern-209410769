@@ -1,29 +1,53 @@
 import axios from "axios";
+import { useEffect } from "react";
+const TestFetchUseProxy_69 = () => {
 
-const TestFetchUseProxy_69 = async () => {
+    const fetchDataLocal = async () => {
+        const resp = await fetch('/api/data.json');
+        const data_local_json = await resp.json();
+        console.log('local json data', data_local_json);
+    }
 
-    const resp = await fetch('/api/data.json');
-    const data_local_json = await resp.json();
-    console.log('local json data', data_local_json);
-
-    const response = await fetch('/api/v1');
-    const data1 = await response.json();
-    console.log('fetch data1', data1);
-
-    const data2 = await axios.get('/api/v1');
-    console.log('axios data2', data2.data);
-
-    const currentUser = {
-        name: "YanBoLin3",
-        email: "2094107693@gms.tku.edu.tw",
-        password: "password3"
+    const fetchData1 = async () => {
+        const response = await fetch('/api/v1');
+        const data1 = await response.json();
+        console.log('fetch data1', data1);
     };
 
-    try {
-        const { data } = await axios.post('/api/v1/auth_69/register_69', currentUser);
-        console.log('register data', data);
-    } catch (err) {
-        console.log(err);
-    }
+    const fetchData2 = async () => {
+        const data2 = await axios.get('/api/v1');
+        console.log('axios data2', data2.data);
+    };
+
+    const fetchData3 = async () => {
+        const currentUser = {
+            name: "YanBoLin50",
+            email: "20941076950@gms.tku.edu.tw",
+            password: "password50"
+        };
+
+        try {
+            const { data } = await axios.post('/api/v1/auth_69/register_69', currentUser);
+            console.log('register data', data);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+    useEffect(() => {
+        fetchDataLocal();
+    }, []);
+    useEffect(() => {
+        fetchData1();
+    }, []);
+    useEffect(() => {
+        fetchData2();
+    }, []);
+    useEffect(() => {
+        fetchData3();
+    }, []);
+    return (
+        <></>
+    );
+
 };
-export default TestFetchUseProxy_69
+export default TestFetchUseProxy_69;
