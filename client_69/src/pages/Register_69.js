@@ -25,7 +25,7 @@ const Register_69 = () => {
     }
 
     const handleChange = (e) => {
-        console.log('e.target', e.target);
+        // console.log('e.target', e.target);
         setValues({ ...values, [e.target.name]: e.target.value })
     }
 
@@ -38,6 +38,7 @@ const Register_69 = () => {
             return;
         }
         const currentUser = { name, email, password };
+        console.log('form data', currentUser)
         if (!isMember) {
             registerUser({
                 currentUser,

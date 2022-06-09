@@ -7,7 +7,7 @@ const register_69 = async (req, res, next) => {
     const user = await User_69.create(req.body);
     const token = user.createJWT();
     //console.log('token', token);
-    res.status(StatusCodes.CREATED).json({ user, token });
+    res.status(StatusCodes.CREATED).json({ user, token, location: user.location });
 
     // add express-async-errors, remove try catch block
     // try {
