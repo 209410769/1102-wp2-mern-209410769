@@ -24,7 +24,8 @@ const register_69 = async (req, res, next) => {
 }
 // login
 const login_69 = async (req, res) => {
-    res.send('login user -- YanBoLin 209410769');
+    console.log('body', req.body)
+    res.json({ msg: 'login user -- YanBoLin 209410769' });
 }
 // update
 const updateUser_69 = async (req, res) => {

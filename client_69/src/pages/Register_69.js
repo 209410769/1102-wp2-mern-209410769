@@ -14,7 +14,7 @@ const initialState = {
 const Register_69 = () => {
     const [values, setValues] = useState(initialState);
 
-    const { showAlert, displayAlert, registerUser } = useAppContext_69()
+    const { showAlert, displayAlert, registerUser, loginUser } = useAppContext_69()
 
     const toggleMember = () => {
         setValues(
@@ -46,6 +46,11 @@ const Register_69 = () => {
                 alertText: 'User created Redirecting ...',
             })
         } else {
+            loginUser({
+                currentUser,
+                endPoint: 'login_69',
+                alertText: 'Login Successful Redirecting ...',
+            })
         }
     }
     return (
