@@ -49,4 +49,9 @@ UserSchema_69.methods.createJWT = function () {
     // console.log('this', this);
     return jwt.sign({ userId: this._id }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_LIFETIME })
 }
+
+UserSchema_69.methods.comparePassword = async function (condidatePassword) {
+    const isMatch = await bcrypt.compare(condidatePassword, this.password);
+    return isMatch;
+}
 export default mongoose.model('User_69', UserSchema_69);

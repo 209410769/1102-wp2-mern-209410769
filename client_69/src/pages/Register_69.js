@@ -33,12 +33,12 @@ const Register_69 = () => {
         e.preventDefault();
         const { name, email, password, isMember } = values;
         //console.log('e.target', e.target);
-        if (!email || !password || isMember && !name) {
+        if (!email || !password || isMember && name) {
             displayAlert();
             return;
         }
         const currentUser = { name, email, password };
-        console.log('form data', currentUser)
+        console.log('form data', currentUser);
         if (!isMember) {
             registerUser({
                 currentUser,

@@ -22,9 +22,9 @@ const TestFetchUseProxy_69 = () => {
 
     const fetchData3 = async () => {
         const currentUser = {
-            name: "YBL",
-            email: "209@gms.tku.edu.tw",
-            password: "123qwe"
+            name: "JIMMY",
+            email: "12345@gms.tku.edu.tw",
+            password: "1234567890"
         };
 
         try {
