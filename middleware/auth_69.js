@@ -1,14 +1,13 @@
 import jwt from 'jsonwebtoken';
 import { UnAuthenticatedError } from '../errors/index.js';
-
 const auth_69 = async (req, res, next) => {
-    const authHeader = await (req.headers.authorization);
-    console.log('authrization', authHeader);
+    const authHeader = req.headers.authorization;
+    console.log('authorization', authHeader);
     if (!authHeader || !authHeader.startsWith('Bearer')) {
         throw new UnAuthenticatedError('Authentication Invalid');
     }
     const token = authHeader.split(' ')[1];
-    //console.log('token',token)
+    // console.log('token', token);
     try {
         const payload = jwt.verify(token, process.env.JWT_SECRET);
         req.user = { userId: payload.userId };
@@ -18,5 +17,4 @@ const auth_69 = async (req, res, next) => {
         throw new UnAuthenticatedError('Authentication Invalid');
     }
 };
-
-export default auth_69; 
+export default auth_69;

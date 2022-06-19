@@ -123,6 +123,10 @@ const AppProvider_69 = ({ children }) => {
   const toggleSidebar = async () => {
     dispatch({ type: TOGGLE_SIDEBAR });
   }
+
+  const updateUser = async (name, enail, lastName, location) => {
+
+  }
   return (
     <AppContext_69.Provider
       value={{ ...state, displayAlert, clearAlert, registerUser, loginUser, logoutUser, toggleSidebar }}
