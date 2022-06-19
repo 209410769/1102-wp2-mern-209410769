@@ -7,7 +7,9 @@ import {
   LOGIN_USER_BEGIN,
   LOGIN_USER_SUCCESS,
   LOGIN_USER_ERROR,
+  LOGOUT_USER,
 } from './action_69';
+import { initialState } from './appContext_69';
 
 const reducer_69 = (state, action) => {
   if (action.type === DISPLAY_ALERT) {
@@ -81,6 +83,14 @@ const reducer_69 = (state, action) => {
       alertText: action.payload.msg,
     };
   }
+  if (action.type === LOGOUT_USER) {
+    return {
+      ...initialState,
+      isLoading: false,
+
+    };
+  }
+
 
   throw new Error(`no such action: ${action.type}`);
 };

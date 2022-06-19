@@ -21,31 +21,38 @@ const initialState = {
   token: null,
   location: '',
 };
+
 const token = localStorage.getItem('token');
 const user = localStorage.getItem('user');
 const userLocation = localStorage.getItem('location');
+
 const AppContext_69 = React.createContext();
+
 const AppProvider_69 = ({ children }) => {
   const [state, dispatch] = useReducer(reducer_69, initialState);
   const displayAlert = () => {
     dispatch({ type: DISPLAY_ALERT });
     clearAlert();
   };
+
   const clearAlert = () => {
     setTimeout(() => {
       dispatch({ type: CLEAR_ALERT });
     }, 3000);
   };
+
   const addUserToLocalStorage = ({ user, token, location }) => {
     localStorage.setItem('user', JSON.stringify(user));
     localStorage.setItem('token', token);
     localStorage.setItem('location', location);
   };
+
   const removeUserFromLocalStorage = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     localStorage.removeItem('location');
   };
+
   // Register
   const axiosRegister = async ({ currentUser, endPoint, alertText }) => {
     try {
@@ -74,6 +81,7 @@ const AppProvider_69 = ({ children }) => {
       })
     }
   };
+
   // Login
   const axiosLogin = async ({ currentUser, endPoint, alertText }) => {
     try {
