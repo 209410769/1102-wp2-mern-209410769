@@ -1,11 +1,11 @@
 import logo from '../assets/images/logo.svg';
 
 const Logo_69 = () => {
-    return (
-        <div>
-            <img src={logo} alt='jobify' className='logo' />
-        </div>
-    )
+  return (
+    <div>
+      <img src={logo} alt='jobify' className='logo' />
+    </div>
+  )
 }
 
-export default Logo_69;
+export default Logo_69

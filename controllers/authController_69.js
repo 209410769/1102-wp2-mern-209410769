@@ -51,8 +51,8 @@ const login_69 = async (req, res) => {
     // res.json({msg:'Login user -- YanboLin 209410769'});
 }
 // update
-const updateUser_69 = async (req, res) => {
+const update_69 = async (req, res) => {
     res.send('update user -- YanBoLin 209410769');
 }
 
-export { register_69, login_69, updateUser_69 }
+export { register_69, login_69, update_69 }
